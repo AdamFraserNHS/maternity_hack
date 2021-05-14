@@ -1,0 +1,112 @@
+<!-- Initial example comes from https://nhsconnect.github.io/FHIR-Maternity-Record/explore_pregnancy_episode.html -->
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="b9139af6-0810-4b42-b106-4e61f697982e"/>
+     <type value="transaction"/>
+     <entry>
+     <fullUrl value="urn:uuid:6926a705-bfe1-4b1d-a451-7160cf7cfe37"/>
+     <resource>
+     <List>
+     <id value="6926a705-bfe1-4b1d-a451-7160cf7cfe37"/>
+     <meta>
+     <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-List-1"/>
+     </meta>
+     <identifier>
+     <system value="https://tools.ietf.org/html/rfc4122"/>
+     <value value="8eda3685-905e-4587-9912-1065c40b47f7"/>
+     </identifier>
+     <status value="current"/>
+     <mode value="snapshot"/>
+    <title value="Pregnancy episode details"/> 
+     <code>
+     <coding>
+     <system value="tbc"/>
+    <code value="tbc"/>
+    <display value="Pregnancy episode details"/>
+     </coding>
+     </code>
+     <subject>
+     <reference value="urn:uuid:a4f0cbff-0c2b-414c-8696-9003fbc72c9e"/>
+     </subject>
+     <date value="2019-02-17T12:00:00+00:00"/>
+     <entry>
+     <date value="2019-02-17T12:00:00+00:00"/>
+     <item>
+     <reference value="urn:uuid:2721d7fd-7b05-466f-9334-1d7c245686e48"/>
+     </item>
+     </entry>
+     <entry>
+     <date value="2019-02-17T10:00:00+00:00"/>
+     <item>
+     <reference value="urn:uuid:9d8b5286-c6c5-46ff-a35d-0f9e8be76854"/>
+     </item>
+     </entry>
+     </List>
+     </resource>
+     </entry>
+    <entry>
+    <fullUrl value="urn:uuid:2721d7fd-7b05-466f-9334-1d7c245686e48"/>
+    <resource>
+    <Observation>
+     <id value="2721d7fd-7b05-466f-9334-1d7c245686e48"/> 
+    <status value="final"/> 
+     <code> 
+     <coding> 
+     <system value="http://snomed.info/sct"/> 
+     <code value="289908002"/> 
+     <display value="Pregnancy"/> 
+     </coding> 
+     </code> 
+     <subject> 
+     <reference value="urn:uuid:a4f0cbff-0c2b-414c-8696-9003fbc72c9e"/>
+     </subject> 
+     <effectiveDateTime value="2019-02-15T11:00:00+00:00"/> 
+     <valueBoolean value="true"/>
+     </Observation> 
+    </resource>
+    </entry>
+    <!--Patient resource-->
+    <entry>
+    <fullUrl value="urn:uuid:9d8b5286-c6c5-46ff-a35d-0f9e8be76854"/>
+    <resource>
+    <Patient>
+    <id value="9d8b5286-c6c5-46ff-a35d-0f9e8be76854"/>
+    <meta>
+    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"/>
+    </meta>
+    <identifier>
+     <system value="http://fhir.nhs.uk/Id/local-person-identifier"/>
+     <value value="6767456"/>
+      </identifier>
+         <name>
+         <use value="official"/>
+                        <family value="Fetus"/>
+                        <given value="One"/>
+            </name>
+    </Patient>
+    </resource>
+    </entry>
+    <!--EpisodeOfCare resource-->
+    <entry>
+    <fullUrl value="urn:uuid:1917ffa3-c13c-4ea9-8ea9-3b3e72380d27"/>
+    <resource>
+    <EpisodeOfCare>
+    <id value="1917ffa3-c13c-4ea9-8ea9-3b3e72380d27"/>
+    <meta>
+    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1"/>
+    </meta>
+    <identifier>
+     <system value="https://tools.ietf.org/html/rfc4122"/>
+     <value value="5f7fabb3-9d12-44d9-91c6-5148ecae239a"/>
+     </identifier>
+    <status value="finished"/>
+    <patient>
+    <reference value="urn:uuid:a4f0cbff-0c2b-414c-8696-9003fbc72c9e"/>
+    </patient>
+    <period>
+    <start value="2018-04-14"/>
+    <end value="2019-01-31"/>
+    </period>
+    </EpisodeOfCare>
+    </resource>
+    </entry>
+    </Bundle>

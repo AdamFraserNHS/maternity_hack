@@ -1,0 +1,397 @@
+   <!-- Initial example comes from https://nhsconnect.github.io/FHIR-Maternity-Record/explore_pregnancy_episode.html -->
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="b96552fc-0e17-4535-90fa-236c32b04e2a"/>
+     <type value="transaction"/>
+     <entry>
+     <fullUrl value="urn:uuid:31d9712d-9c77-489d-8b92-9dd73d6803d8"/>
+     <resource>
+     <List>
+     <id value="31d9712d-9c77-489d-8b92-9dd73d6803d8"/>
+     <meta>
+     <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-List-1"/>
+     </meta>
+     <identifier>
+     <system value="https://tools.ietf.org/html/rfc4122"/>
+     <value value="0e94f913-3c15-4d7d-ab86-1337090a2636"/>
+     </identifier>
+     <status value="current"/>
+     <mode value="snapshot"/>
+    <title value="Pregnancy outcome"/> 
+     <code>
+     <coding>
+     <system value="tbc"/>
+    <code value="tbc"/>
+    <display value="Pregnancy outcome"/>
+     </coding>
+     </code>
+     <subject>
+     <reference value="urn:uuid:a33a2dde-685f-470d-b1d6-dcef537a7f86"/>
+     </subject>
+     <date value="2019-02-17T12:00:00+00:00"/>
+     <entry>
+     <date value="2019-02-17T12:00:00+00:00"/>
+     <item>
+     <reference value="urn:uuid:d3be466a-ce9e-4541-85db-430b6a965d7e"/>
+     </item>
+     </entry>
+     <entry>
+     <date value="2019-02-18T12:00:00+00:00"/>
+     <item>
+     <reference value="urn:uuid:0f80c3b5-71bc-4fa2-8519-dea847dfd1c4"/>
+     </item>
+     </entry>
+     <entry>
+     <date value="2019-02-18T12:00:00+00:00"/>
+     <item>
+     <reference value="urn:uuid:2ba170e9-aacf-4c1e-a571-10da1ef8a62e"/>
+     </item>
+     </entry>
+     <entry>
+     <date value="2019-02-18T12:00:00+00:00"/>
+     <item>
+     <reference value="urn:uuid:21363797-b57b-402a-8343-7f38df54eb24"/>
+     </item>
+     </entry>
+     <entry>
+     <date value="2019-02-18T12:00:00+00:00"/>
+     <item>
+     <reference value="urn:uuid:a20232fd-1342-4b79-8486-3e3acd40e2ca"/>
+     </item>
+     </entry>
+      <entry>
+     <date value="2019-02-18T12:00:00+00:00"/>
+     <item>
+     <reference value="urn:uuid:254d8ba4-e2d3-4b93-bbfe-3e8e8ef47d7f"/>
+     </item>
+     </entry>
+       <entry>
+     <date value="2019-02-18T12:00:00+00:00"/>
+     <item>
+     <reference value="urn:uuid:7ffddf71-a2be-48bd-a601-d24162e88b59"/>
+     </item>
+     </entry>
+     </List>
+     </resource>
+     </entry>
+    <entry>
+    <fullUrl value="urn:uuid:d3be466a-ce9e-4541-85db-430b6a965d7e"/>
+    <resource>
+    <Procedure>
+     <id value="d3be466a-ce9e-4541-85db-430b6a965d7e"/> 
+    <meta>
+    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"/>
+    </meta>
+    <identifier>
+     <system value="https://tools.ietf.org/html/rfc4122"/>
+     <value value="4195138b-bfe2-482b-b44c-234024b5341c"/>
+     </identifier>
+     <status value="completed"/> 
+      <code> 
+        <coding> 
+          <system value="tbc"/> 
+          <code value="0"/> 
+          <display value="Spontaneous vertex (normal vaginal Delivery, occipitoanterior)"/> 
+        </coding> 
+       </code> 
+      <subject> 
+     <reference value="urn:uuid:a33a2dde-685f-470d-b1d6-dcef537a7f86"/>
+      </subject> 
+      <performedDateTime value="2019-02-15"/> 
+      <performer> 
+        <actor> 
+         <reference value="urn:uuid:803bf2b8-30a7-4a64-915a-966bc6c99714"/>
+        </actor> 
+        <onBehalfOf>
+        <reference value="urn:uuid:2082d300-f109-4c49-8d05-8fbe92d22db2"/>    
+        </onBehalfOf>
+      </performer>  
+      <location>
+      <reference value="urn:uuid:05e0c2f3-dd76-4af1-962a-5f1cecccdaaa"/>  
+      </location>
+     </Procedure> 
+    </resource>
+    </entry>
+    <entry>
+    <fullUrl value="urn:uuid:a20232fd-1342-4b79-8486-3e3acd40e2ca"/>
+    <resource>
+    <Procedure>
+     <id value="a20232fd-1342-4b79-8486-3e3acd40e2ca"/> 
+    <meta>
+    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"/>
+    </meta>
+    <identifier>
+     <system value="https://tools.ietf.org/html/rfc4122"/>
+     <value value="15a4a6b8-851f-487e-82fb-172dabddee5d"/>
+     </identifier>
+     <status value="completed"/>
+      <category> 
+        <coding> 
+          <system value="tbc"/> 
+          <code value="03"/> 
+          <display value="Manual Removal"/> 
+        </coding> 
+      </category>  
+      <code> 
+        <coding> 
+          <system value="http://snomed.info/sct"/> 
+          <code value="236994008"/> 
+          <display value="Placental delivery procedure"/> 
+        </coding> 
+       </code> 
+      <subject> 
+     <reference value="urn:uuid:a33a2dde-685f-470d-b1d6-dcef537a7f86"/>
+      </subject> 
+      <performedDateTime value="2019-02-15"/> 
+      <performer> 
+        <actor> 
+         <reference value="urn:uuid:803bf2b8-30a7-4a64-915a-966bc6c99714"/>
+        </actor> 
+        <onBehalfOf>
+        <reference value="urn:uuid:2082d300-f109-4c49-8d05-8fbe92d22db2"/>    
+        </onBehalfOf>
+      </performer>  
+      <location>
+      <reference value="urn:uuid:05e0c2f3-dd76-4af1-962a-5f1cecccdaaa"/>  
+      </location>
+     </Procedure> 
+    </resource>
+    </entry>
+    <entry>
+    <fullUrl value="urn:uuid:21363797-b57b-402a-8343-7f38df54eb24"/>
+    <resource>
+    <Observation>
+     <id value="21363797-b57b-402a-8343-7f38df54eb24"/> 
+    <status value="final"/> 
+     <code> 
+     <coding> 
+     <system value="http://snomed.info/sct"/> 
+     <code value="249123005"/> 
+     <display value="Onset of contractions"/> 
+     </coding> 
+     </code> 
+     <subject> 
+     <reference value="urn:uuid:a33a2dde-685f-470d-b1d6-dcef537a7f86"/>
+     </subject> 
+     <context>
+     <reference value="urn:uuid:0f80c3b5-71bc-4fa2-8519-dea847dfd1c4"/> 
+     </context>
+     <effectiveDateTime value="2019-02-15T11:00:00+00:00"/> 
+     <performer>
+     <reference value="urn:uuid:803bf2b8-30a7-4a64-915a-966bc6c99714"/>
+     </performer>
+     <valueBoolean value="true"/>
+     </Observation> 
+    </resource>
+    </entry>
+    
+    <entry>
+    <fullUrl value="urn:uuid:254d8ba4-e2d3-4b93-bbfe-3e8e8ef47d7f"/>
+    <resource>
+    <Observation>
+     <id value="254d8ba4-e2d3-4b93-bbfe-3e8e8ef47d7f"/> 
+    <status value="final"/> 
+     <code> 
+     <coding> 
+     <system value="http://snomed.info/sct"/> 
+     <code value="267013003"/> 
+     <display value="Past pregnancy outcome"/> 
+     </coding> 
+     </code> 
+     <subject> 
+     <reference value="urn:uuid:a33a2dde-685f-470d-b1d6-dcef537a7f86"/>
+     </subject> 
+     <context>
+     <reference value="urn:uuid:0f80c3b5-71bc-4fa2-8519-dea847dfd1c4"/> 
+     </context>
+     <effectiveDateTime value="2019-02-15T11:05:00+00:00"/> 
+     <performer>
+     <reference value="urn:uuid:803bf2b8-30a7-4a64-915a-966bc6c99714"/>
+     </performer>
+     <valueCodeableConcept>
+     <coding>
+     <system value="tbc"/>
+     <code value="01"/>
+     <display value="Live birth"/>
+     </coding> 
+     </valueCodeableConcept>
+     </Observation> 
+    </resource>
+    </entry>
+    
+    <entry>
+    <fullUrl value="urn:uuid:7ffddf71-a2be-48bd-a601-d24162e88b59"/>
+    <resource>
+    <Observation>
+     <id value="7ffddf71-a2be-48bd-a601-d24162e88b59"/> 
+    <status value="final"/> 
+     <code> 
+     <coding> 
+     <system value="http://snomed.info/sct"/> 
+     <code value="397836004"/> 
+     <display value="Time of delivery"/> 
+     </coding> 
+     </code> 
+     <subject> 
+     <reference value="urn:uuid:a33a2dde-685f-470d-b1d6-dcef537a7f86"/>
+     </subject> 
+     <context>
+     <reference value="urn:uuid:0f80c3b5-71bc-4fa2-8519-dea847dfd1c4"/> 
+     </context>
+     <effectiveDateTime value="2019-02-15T11:05:00+00:00"/> 
+     <performer>
+     <reference value="urn:uuid:803bf2b8-30a7-4a64-915a-966bc6c99714"/>
+     </performer>
+     <valueDateTime value="2019-02-15T11:05:00+00:00"/>
+     </Observation> 
+    </resource>
+    </entry>
+    <entry>
+    <fullUrl value="urn:uuid:2ba170e9-aacf-4c1e-a571-10da1ef8a62e"/>
+    <resource>
+    <Observation>
+     <id value="2ba170e9-aacf-4c1e-a571-10da1ef8a62e"/> 
+    <status value="final"/> 
+     <code> 
+     <coding> 
+     <system value="http://snomed.info/sct"/> 
+     <code value="250771004"/> 
+     <display value="Actual blood loss"/> 
+     </coding> 
+     </code> 
+     <subject> 
+     <reference value="urn:uuid:a33a2dde-685f-470d-b1d6-dcef537a7f86"/>
+     </subject> 
+     <context>
+     <reference value="urn:uuid:0f80c3b5-71bc-4fa2-8519-dea847dfd1c4"/> 
+     </context>
+     <effectiveDateTime value="2019-02-15T11:05:00+00:00"/> 
+     <performer>
+     <reference value="urn:uuid:803bf2b8-30a7-4a64-915a-966bc6c99714"/>
+     </performer>
+     <valueDateTime value="2019-02-15T11:05:00+00:00"/>
+     </Observation> 
+    </resource>
+    </entry>
+    <!-- Encounter resource entry -->
+    <entry>
+    <fullUrl value="urn:uuid:0f80c3b5-71bc-4fa2-8519-dea847dfd1c4"/>
+    <resource>
+    <Encounter>
+    <id value="0f80c3b5-71bc-4fa2-8519-dea847dfd1c4"/>
+    <meta>
+    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"/>
+    </meta>
+    <identifier>
+    <system value="https://tools.ietf.org/html/rfc4122"/>
+    <value value="f669d5ee-190c-47ff-825e-4f6bcfae05fd"/>
+    </identifier>
+    <status value="finished"/>
+    <period>
+    <start value="2019-02-17T09:00:00+00:00"/>
+    </period>
+    <location>
+    <location>
+    <reference value="urn:uuid:05e0c2f3-dd76-4af1-962a-5f1cecccdaaa"/>
+    </location>
+    </location>
+    </Encounter>
+    </resource>
+    </entry>
+    <!-- The Location resource entry -->
+    <entry>
+    <fullUrl value="urn:uuid:05e0c2f3-dd76-4af1-962a-5f1cecccdaaa"/>
+    <resource>
+    <Location>
+    <id value="05e0c2f3-dd76-4af1-962a-5f1cecccdaaa"/>
+    <meta>
+    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1"/>
+    </meta>
+    <identifier>
+    <system value="https://fhir.nhs.uk/Id/ods-site-code"/>
+    <value value="YDD01"/>
+    </identifier>
+    <name value="Caring Delivery Suite"/>
+    <type>
+    <coding>
+    <system value="tbc"/>
+    <code value="1"/>
+    <display value="Midwifery unit, co-located with Consultant obstetric unit"/>
+    </coding>
+    </type>
+        <address>
+                        <line value="Leeds General Infirmary"/>
+                            <line value="Great George Street"/>
+                        <city value="Leeds"/>
+                        <postalCode value="LS1 3EX"/>
+            </address>
+    <managingOrganization>
+    <reference value="urn:uuid:2082d300-f109-4c49-8d05-8fbe92d22db2"/>
+    </managingOrganization>
+    </Location>
+    </resource>
+    </entry>
+    <!-- The Organization resource entry -->
+    <entry>
+    <fullUrl value="urn:uuid:2082d300-f109-4c49-8d05-8fbe92d22db2"/>
+    <resource>
+    <Organization>
+    <id value="2082d300-f109-4c49-8d05-8fbe92d22db2"/>
+    <meta>
+    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"/>
+    </meta>
+    <identifier>
+    <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+    <value value="YDD"/>
+    </identifier>
+    </Organization>
+    </resource>
+    </entry>
+    <!-- The Practitioner 1 resource entry -->
+    <entry>
+    <fullUrl value="urn:uuid:803bf2b8-30a7-4a64-915a-966bc6c99714"/>
+    <resource>
+    <Practitioner>
+    <id value="803bf2b8-30a7-4a64-915a-966bc6c99714"/>
+    <meta>
+    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1"/>
+    </meta>
+    <identifier>
+    <system value="https://fhir.nhs.uk/Id/sds-user-id"/>
+    <value value="7123456"/>
+    </identifier>
+    <name>
+    <family value="Jones"/>
+    <given value="Thomas"/>
+    <prefix value="Dr"/>
+    </name>
+    <telecom>
+                        <system value="phone"/>
+                        <value value="0113 6323200"/>
+                        <use value="work"/>
+        </telecom>
+    </Practitioner>
+    </resource>
+    </entry>
+    <!-- entry for the practitionerRole resource-->
+    <entry>
+    <fullUrl value="urn:uuid:6a323c33-e201-4e7e-8cdc-c51feff58dd3"/>
+    <resource>
+    <PractitionerRole>
+    <id value="6a323c33-e201-4e7e-8cdc-c51feff58dd3"/>
+    <meta>
+    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1"/>
+    </meta>
+    <practitioner>
+    <reference value="urn:uuid:803bf2b8-30a7-4a64-915a-966bc6c99714"/>
+    </practitioner>
+    <code>
+    <coding>
+    <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1"/>
+    <code value="R0050"/>
+    <display value="Consultant"/>
+    </coding>
+    </code>
+    </PractitionerRole>
+    </resource>
+    </entry>
+    </Bundle>
