@@ -14,8 +14,8 @@ import csv as cv
 ## Define the paths
 
 
-pathMaternity = 'tests/maternity/maternity.csv'
-pathJson = 'tests/maternity/maternity.json'
+pathMaternity = 'maternity.csv'
+pathJson = 'src/main/resources/maternity.json'
 
 
 ## Load and process (if required) the data using Pandas and the csv file.
@@ -83,7 +83,7 @@ def dem_dic_maternity_json(df):
                           "period": {
                               "start": df.iloc[i]["Maternity Start Date"]
                           },
-                          "type": snomed_fhir("305323008", "Admission by midwife"),
+                          "type":[ snomed_fhir("305323008", "Admission by midwife") ],
                       }
                 },
                 {
@@ -115,9 +115,9 @@ def dem_dic_maternity_json(df):
 
                       }
                 },
-                fhir_observation("valueInteger", df.iloc[i]["Number of fetus (per conception)"], "final",
+                fhir_observation("valueInteger", int(df.iloc[i]["Number of fetus (per conception)"]), "final",
                                             "382341000000101", "Total number of registerable births at delivery"),
-                fhir_observation("valueInteger", df.iloc[i]["Number of fetus (per conception)"],"final",
+                fhir_observation("valueInteger", int(df.iloc[i]["Number of fetus (per conception)"]),"final",
                                               "246435002", "Number of fetuses"),
                 fhir_observation("valueDateTime",df.iloc[i]["Estimated Due Date"], "final",
                                               "161714006", "Estimated date of delivery"),
@@ -136,7 +136,7 @@ def dem_dic_maternity_json(df):
                             "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1"
                         ]
                     },
-                    "type": snomed_fhir("275305005", "Maternity care"),  # There is another episode of care preg/postnatal not sure !
+                    "type": [snomed_fhir("275305005", "Maternity care")],  # There is another episode of care preg/postnatal not sure !
                     "identifier": [
                         {
                             "system": "https://tools.ietf.org/html/rfc4122", # well this is definitely not correct !!
@@ -156,7 +156,13 @@ def dem_dic_maternity_json(df):
                             "start": df.iloc[i]["Maternity Start Date"]
                         }
                     }],
-                    "managingOrganization": df.iloc[i]["Maternity services provider"]
+                    "managingOrganization": {
+                        "identifier":   [
+                            {
+                            "system": "https://fhir.nhs.uk/Id/ods-site-code",
+                            "value": df.iloc[i]["Maternity services provider"]
+                            } ]
+                    }
                 }
             },
             {
@@ -187,7 +193,13 @@ def dem_dic_maternity_json(df):
                         ]
                     },
                     "authoredOn": df.iloc[i]["Maternity Start Date"],
-                    "performer":  df.iloc[i]["Maternity services provider"],
+                    "recipient":   [{
+                        "identifier":   [
+                            {
+                            "system": "https://fhir.nhs.uk/Id/ods-site-code",
+                            "value": df.iloc[i]["Maternity services provider"]
+                            } ]
+                    }],
                     # , EpisodeOfCare.referralRequest := ReferralRequest  not sure...
                     "serviceRequested": [snomed_fhir("4563007", "Hospital admission, transfer from other hospital or health care facility")],
                     "description": "Referral for Hospital admission"
@@ -202,15 +214,20 @@ def dem_dic_maternity_json(df):
                         ]
                     },
                     "author":[{
-                        "identifier": df.iloc[i]["Maternity services provider"]
+                        "identifier":   [
+                            {
+                            "system": "https://fhir.nhs.uk/Id/ods-site-code",
+                            "value": df.iloc[i]["Maternity services provider"]
+                            } ]
+                         
                     }]
                 }
             }
             ]
         }
 
-        dict_json.update({str(i): single_json})
-
+        # dict_json.update({str(i): single_json})
+        dict_json.update(single_json)
     return dict_json
 
 
@@ -270,6 +287,7 @@ dictJson = dem_dic_maternity_json(dfMaternity)
 
 # ## Create the json file.
 print(dfMaternity.iloc[0]["Discharge Date & Time"])
+
 
 with open(pathJson, 'w') as demoFjson:
    js.dump(dictJson, demoFjson, indent=2)

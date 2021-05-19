@@ -40,7 +40,16 @@
 			<artifactId>hapi-fhir-structures-dstu3</artifactId>
 			<version>5.0.1</version>
 		</dependency>
-			
+		<dependency>
+		<groupId>ca.uhn.hapi.fhir</groupId>
+		<artifactId>hapi-fhir-structures-r4</artifactId>
+		<version>5.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>hapi-fhir-converter</artifactId>
+			<version>5.0.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>

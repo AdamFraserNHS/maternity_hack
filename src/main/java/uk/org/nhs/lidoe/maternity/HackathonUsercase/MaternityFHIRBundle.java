@@ -1,6 +1,7 @@
 package uk.org.nhs.lidoe.maternity.HackathonUsercase;
 
 import org.hl7.fhir.dstu3.model.Bundle;
+
 import org.hl7.fhir.dstu3.model.Parameters.ParametersParameterComponent;
 
 import ca.uhn.fhir.context.FhirContext;
@@ -13,6 +14,7 @@ public class MaternityFHIRBundle {
 
     Bundle  bMaternity;
     FhirContext ctx;
+    
 
     public MaternityFHIRBundle(Resource res) {
         MaternityFHIRBundle( res, true);
@@ -42,6 +44,15 @@ public class MaternityFHIRBundle {
 
     public String toJSON() {
         return ctx.newJsonParser().encodeResourceToString(bMaternity);
+    
+        
     }
+    // public String toJSONR4() {
+        
+    //     FhirContext ctx4 = FhirContext.forR4();
+    //     org.hl7.fhir.r4.model.Bundle b4 = Bundle30_40.convertBundle(bMaternity);
+
+    //     return ctx4.newJsonParser().encodeResourceToString(b4);
+    // }
     
 }
