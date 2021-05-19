@@ -15,14 +15,22 @@ public class MaternityFHIRBundle {
     FhirContext ctx;
 
     public MaternityFHIRBundle(Resource res) {
+        MaternityFHIRBundle( res, true);
        //System.out.println(res.toString());
-       ResourceFile rf =  new ResourceFile(res);
-
-       ctx = FhirContext.forDstu3();
-
-       bMaternity = ctx.newXmlParser().parseResource(Bundle.class,rf.toString());
-
     }
+
+    public MaternityFHIRBundle(Resource res, boolean xml) {
+        //System.out.println(res.toString());
+        ResourceFile rf =  new ResourceFile(res);
+ 
+        ctx = FhirContext.forDstu3();
+        if (xml==true )
+            bMaternity = ctx.newXmlParser().parseResource(Bundle.class,rf.toString());
+        else
+            bMaternity = ctx.newJsonParser().parseResource(Bundle.class,rf.toString());
+ 
+     }
+ 
 
     public String toString() {
        return toJSON();

@@ -20,11 +20,14 @@ public class MaternityController {
 	private Resource rPregFHIR;
     @Value("classpath:pregnancy_outcome_example.xml")
 	private Resource rPregOutFHIR;
+	@Value("classpath:maternity.json")
+	private Resource rMatJSON;
+
 
 	@GetMapping(path="/mat",
             produces = {MediaType.APPLICATION_JSON_VALUE} )
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		MaternityFHIRBundle mfhirTest = new MaternityFHIRBundle(rPregOutFHIR);
+		MaternityFHIRBundle mfhirTest = new MaternityFHIRBundle(rMatJSON,false);
 
         return mfhirTest.toString();
 	}
