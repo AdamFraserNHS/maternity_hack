@@ -1,5 +1,5 @@
 # Maternity FHIR user cases
-Maternity FHIR message for use case in NHS Hackathon June 2021
+Maternity FHIR message for use case in NHS Hackathon 12/13 July 2021
 
 Just an initial block of stub code to load up some example maternity message into FHIR bundles and return them as JSON.
 
