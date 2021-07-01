@@ -9,3 +9,5 @@ The intention is to construct these messages from background maternity systems a
 
 Details 
 https://nhsconnect.github.io/FHIR-Maternity-Record/explore_plan_and_requested_actions.html
+
+https://nhsconnect.github.io/Digital-Child-Health-STU3/explore_birth_details.html
