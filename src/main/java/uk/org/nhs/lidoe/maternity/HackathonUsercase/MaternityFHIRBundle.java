@@ -17,14 +17,14 @@ public class MaternityFHIRBundle {
     
 
     public MaternityFHIRBundle(Resource res) {
-        MaternityFHIRBundle( res, true);
+        this( res, true);
        //System.out.println(res.toString());
     }
 
     public MaternityFHIRBundle(Resource res, boolean xml) {
         //System.out.println(res.toString());
         ResourceFile rf =  new ResourceFile(res);
- 
+        System.out.println(rf.toString());
         ctx = FhirContext.forDstu3();
         if (xml==true )
             bMaternity = ctx.newXmlParser().parseResource(Bundle.class,rf.toString());
